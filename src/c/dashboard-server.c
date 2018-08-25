@@ -57,10 +57,13 @@ struct responsePtr {
 	int status;
 	struct stat stat;
 };
+char *webroot="web/";
 // TODO: Cache
 void getPtrToFileContent(struct responsePtr * rptr){
 	FILE * fp;
-	fp = fopen(rptr->filename,"r");
+	char filename[1024];
+	sprintf(filename, "%s%s", webroot, rptr->filename);
+	fp = fopen(filename,"r");
 	if ( fp == NULL ) {
 		perror("fail to open file");
 		rptr->headerResp="HTTP/1.1 500 OK\n\n";
