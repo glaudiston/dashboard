@@ -1,0 +1,44 @@
+body{
+	background: url(img/bg.jpg);
+	background-size: 100vw 100vh;
+	background-repeat-x: no-repeat;
+	background-color: #00ffc5;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+.container-box {
+	display: grid;
+	box-sizing: border-box;
+	grid-template-columns: repeat(auto-fit, minmax(20em, max-content));
+	//background: rgba(255, 255, 255, .4);
+}
+
+.container-box > li {
+	list-style:none;
+	padding: 1em;
+	border: solid black thin;
+	margin: 1rem;
+	border-radius: 3px;
+	box-shadow: 1px 1px 4px gray;
+	display: grid;
+	background: rgba(255, 255, 255, .5);
+	grid-template-columns: 1em 1fr;
+	grid-gap: .5em;
+}
+
+.container-box > li > div {
+	height: 1em;
+	border-radius: 3em;
+}
+
+.status-NOK {
+	background-color: red;
+}
+.status-INACTIVE {
+	background-color: gray;
+}
+.status-OK {
+	background-color: green;
+}
